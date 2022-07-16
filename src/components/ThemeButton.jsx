@@ -10,6 +10,7 @@ const ThemeButtonStyled = styled.div`
   background: rgba(0, 0, 0, 0.5);
   width: fit-content;
   border-radius: 10px;
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 700;
   font-size: 20px;
   line-height: 26px;

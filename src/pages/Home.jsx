@@ -1,12 +1,15 @@
+import { useEffect, useState } from 'react';
+import { Navigate, useNavigate } from 'react-router-dom';
+import { mockTheme1Produdcts, mockTheme2Produdcts } from '../data/mockData';
+
 import Navigation from '../components/Navigation';
 import ProductCard from '../components/ProductCard';
 import ThemeButton from '../components/ThemeButton';
 import styled from 'styled-components';
-import { mockTheme1Produdcts, mockTheme2Produdcts } from '../data/mockData';
-import { useEffect, useState } from 'react';
 
 const Home = () => {
   const [products, setProducts] = useState();
+  const navigate = useNavigate();
 
   const onClickThemeButton = (themeId) => {
     if (themeId === 1) {
@@ -44,6 +47,7 @@ const Home = () => {
           {products ? (
             products.map((product) => (
               <ProductCard
+                onClick={() => navigate(`product/${product.id}`)}
                 key={product.id}
                 name={product.name}
                 description={product.description}

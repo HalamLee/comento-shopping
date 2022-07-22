@@ -3,7 +3,7 @@ import ProductCard from '../components/ProductCard';
 import ThemeButton from '../components/ThemeButton';
 import styled from 'styled-components';
 import { mockTheme1Produdcts, mockTheme2Produdcts } from '../data/mockData';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const Home = () => {
   const [products, setProducts] = useState();
@@ -15,6 +15,12 @@ const Home = () => {
       setProducts(mockTheme2Produdcts);
     }
   };
+
+  useEffect(() => {
+    setTimeout(() => {
+      setProducts(mockTheme1Produdcts);
+    }, 1000);
+  }, []);
 
   return (
     <Wrapper>

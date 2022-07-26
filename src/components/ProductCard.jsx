@@ -1,9 +1,10 @@
 import styled from 'styled-components';
+import Image from './Image';
 
 const ProductCard = ({ name, description, thumbnail, onClick }) => {
   return (
     <div onClick={onClick}>
-      <ProductImage src={thumbnail} />
+      <Image width={'341px'} height={'204px'} src={thumbnail} />
       <Name>{name}</Name>
       <Desc>{description}</Desc>
     </div>
@@ -11,12 +12,6 @@ const ProductCard = ({ name, description, thumbnail, onClick }) => {
 };
 
 export default ProductCard;
-
-const ProductImage = styled.div`
-  width: 341px;
-  height: 204px;
-  background: url(${(props) => props.src}) center/cover no-repeat;
-`;
 
 const Name = styled.div`
   font-family: 'Noto Sans KR', sans-serif;
